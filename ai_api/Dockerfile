@@ -1,25 +1,9 @@
 FROM python:3.11-slim
 
-# ติดตั้ง system dependencies สำหรับ OpenCV
+# ติดตั้ง system dependencies เบื้องต้น
 RUN apt-get update && apt-get install -y \
     libglib2.0-0 \
-    libsm6 \
-    libxext6 \
-    libxrender1 \
     libgomp1 \
-    libgl1-mesa-dri \
-    libgtk-3-0 \
-    libavcodec59 \
-    libavformat59 \
-    libswscale6 \
-    libv4l-0 \
-    libxvidcore4 \
-    libx264-164 \
-    libjpeg62-turbo \
-    libpng16-16 \
-    libtiff6 \
-    libopenblas0 \
-    gfortran \
     && rm -rf /var/lib/apt/lists/*
 
 WORKDIR /usr/src/app
