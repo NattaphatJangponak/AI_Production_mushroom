@@ -5,21 +5,20 @@ RUN apt-get update && apt-get install -y \
     libglib2.0-0 \
     libsm6 \
     libxext6 \
-    libxrender-dev \
+    libxrender1 \
     libgomp1 \
-    libgl1-mesa-glx \
-    libglib2.0-0 \
+    libgl1-mesa-dri \
     libgtk-3-0 \
-    libavcodec-dev \
-    libavformat-dev \
-    libswscale-dev \
-    libv4l-dev \
-    libxvidcore-dev \
-    libx264-dev \
-    libjpeg-dev \
-    libpng-dev \
-    libtiff-dev \
-    libatlas-base-dev \
+    libavcodec59 \
+    libavformat59 \
+    libswscale6 \
+    libv4l-0 \
+    libxvidcore4 \
+    libx264-164 \
+    libjpeg62-turbo \
+    libpng16-16 \
+    libtiff6 \
+    libopenblas0 \
     gfortran \
     && rm -rf /var/lib/apt/lists/*
 
