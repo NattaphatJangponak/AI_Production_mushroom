@@ -1,9 +1,11 @@
 FROM python:3.11-slim
 
-# ติดตั้ง system dependencies เบื้องต้น
+# ติดตั้ง system dependencies สำหรับ OpenCV
 RUN apt-get update && apt-get install -y \
     libglib2.0-0 \
     libgomp1 \
+    libgl1 \
+    libglib2.0-0 \
     && rm -rf /var/lib/apt/lists/*
 
 WORKDIR /usr/src/app
