@@ -48,5 +48,6 @@ python app.py
 }
 So Far So Good
 
+#use api
 docker build -t ai-api:local .
 docker run -d --name ai-api -p 8989:8989 --restart unless-stopped ai-api:local
