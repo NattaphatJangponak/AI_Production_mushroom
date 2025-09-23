@@ -1,3 +1,4 @@
+
 FROM ultralytics/ultralytics:latest
 
 WORKDIR /usr/src/app

@@ -8,6 +8,13 @@ import base64
 from io import BytesIO
 from PIL import Image
 import pandas as pd
+import random
+import numpy as np
+
+try:
+    import torch
+except Exception:
+    torch = None
 from predict_spawn import predict_spawn
 from predict_growth import predict_growth
 from predict_spawn_seg import predict_spawn_seg
@@ -30,6 +37,22 @@ def clean_base64(b64_str):
         return base64_str
     else:
         return False
+
+
+# Deterministic settings
+os.environ["PYTHONHASHSEED"] = "0"
+random.seed(0)
+np.random.seed(0)
+if torch is not None:
+    try:
+        torch.use_deterministic_algorithms(True)
+        torch.backends.cudnn.benchmark = False
+        torch.backends.cudnn.deterministic = True
+        torch.manual_seed(0)
+        if torch.cuda.is_available():
+            torch.cuda.manual_seed_all(0)
+    except Exception:
+        pass
 
 
 def spawn_predict(base64_string):
