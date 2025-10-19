@@ -49,5 +49,11 @@ python app.py
 So Far So Good
 
 #use api
+---
+#สร้าง Docker image ชื่อ ai-api:local จาก Dockerfile ในโฟลเดอร์นี้
+---
 docker build -t ai-api:local .
+
+#รัน API พอร์ต 8989, ชื่อ ai-api, รีสตาร์ทอัตโนมัติเมื่อเครื่องเปิด
+---
 docker run -d --name ai-api -p 8989:8989 --restart unless-stopped ai-api:local
